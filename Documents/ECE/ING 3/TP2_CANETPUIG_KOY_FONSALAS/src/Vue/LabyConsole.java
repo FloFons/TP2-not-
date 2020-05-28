@@ -14,18 +14,19 @@ import java.util.Scanner;
 public class LabyConsole {
 
     ///Attributs
-
     /**
-     * Affiche le menu composé de 3 choix : déplacement aléatoire, en profondeur DFS ou quitter le programme
-     * L’utilisateur doit saisir un choix de type int et recommencer tant qu’aucun des 3 choix proposés n’est valide,
-     * y compris si l’utilisateur saisit des caractères au lieu d’un nombre entier
-     * Il faut donc pouvoir convertir la saisie, y compris avec des caractères, en entier
-     * Dans le cas où l’utilisateur saisit des caractères autres que des chiffres, cette conversion génère
-     * l’exception  NumberFormatException qu’il faut attraper pour afficher un message d’erreur,
-     * tout en pouvant recommencer la saisie
-     * 
+     * Affiche le menu composé de 3 choix : déplacement aléatoire, en profondeur
+     * DFS ou quitter le programme L’utilisateur doit saisir un choix de type
+     * int et recommencer tant qu’aucun des 3 choix proposés n’est valide, y
+     * compris si l’utilisateur saisit des caractères au lieu d’un nombre entier
+     * Il faut donc pouvoir convertir la saisie, y compris avec des caractères,
+     * en entier Dans le cas où l’utilisateur saisit des caractères autres que
+     * des chiffres, cette conversion génère l’exception NumberFormatException
+     * qu’il faut attraper pour afficher un message d’erreur, tout en pouvant
+     * recommencer la saisie
+     *
      * Cette méthode retourne le choix saisi.
-
+     *
      * @return
      */
     public int menu() {
@@ -74,7 +75,11 @@ public class LabyConsole {
      * @param laby
      */
     public void affiche(Labyrinthe laby) {
-
+        for (int col = 0; col < 5; col++) {
+            for (int lig = 0; lig < 5; lig++) {
+                System.out.print(laby.getCase(lig,col));
+            }
+        }
     }
 
 }
